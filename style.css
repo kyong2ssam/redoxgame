@@ -1,0 +1,241 @@
+/* 기본 리셋 및 폰트 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 앱 컨테이너 (모바일 세로형 레이아웃) */
+#app-container {
+    width: 100%;
+    max-width: 480px; /* PC에서도 모바일 크기로 고정 */
+    height: 100vh;
+    max-height: 850px;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    border: 2px solid #0ff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 화면 전환용 클래스 */
+.screen {
+    display: none; /* 기본적으로 모두 숨김 */
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.screen.active {
+    display: flex; /* active 클래스가 붙은 화면만 보임 */
+}
+
+/* 네온 텍스트 효과 */
+.neon-text {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0ff, 0 0 40px #0ff;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.neon-sub {
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.subtitle {
+    text-align: center;
+    color: #a0a0ff;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* 폼 디자인 */
+#info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #0ff;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 10px #0ff;
+    border-color: #fff;
+}
+
+/* 네온 버튼 */
+.neon-btn {
+    margin-top: 15px;
+    padding: 15px;
+    background: transparent;
+    color: #0ff;
+    border: 2px solid #0ff;
+    font-size: 1.2rem;
+    font-family: 'Orbitron', 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    text-shadow: 0 0 5px #0ff;
+    box-shadow: inset 0 0 10px #0ff, 0 0 20px rgba(0, 255, 255, 0.5);
+    transition: 0.2s;
+}
+
+.neon-btn:hover {
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 30px #0ff;
+}
+
+.neon-btn.small {
+    font-size: 0.9rem;
+    padding: 10px;
+    border-color: #f0f; /* 테스트 버튼은 마젠타 색상으로 구분 */
+    color: #f0f;
+    text-shadow: 0 0 5px #f0f;
+    box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* HUD (타이머 & 점수) */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(0, 255, 255, 0.1);
+    border-bottom: 1px solid #0ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* 플레이 영역 */
+.play-field {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.material {
+    width: 45%;
+    height: 250px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.material h3 {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.element {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.source { border-color: #f0f; box-shadow: 0 0 15px rgba(255, 0, 255, 0.1); }
+.target { border-color: #0ff; box-shadow: 0 0 15px rgba(0, 255, 255, 0.1); }
+
+/* 전자 및 슬롯 디자인 */
+.electron {
+    width: 50px; height: 50px;
+    background: #0ff;
+    color: #000;
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    cursor: grab;
+    box-shadow: 0 0 15px #0ff;
+}
+
+.slot {
+    width: 50px; height: 50px;
+    border: 2px dotted #0ff;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+/* 반응식 영역 */
+.reaction-formula {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid #0ff;
+    font-size: 1.3rem;
+}
+
+.reaction-formula .blank {
+    color: #f0f;
+    font-weight: bold;
+}
+
+/* 결과 화면 */
+#screen-result {
+    justify-content: center;
+}
+
+.result-info {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 1.2rem;
+}
+
+.final-score {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.final-score span {
+    font-size: 3.5rem;
+    color: #0ff;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 20px #0ff;
+}
+/* 오답일 때 화면 흔들림 효과 */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
