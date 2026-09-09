@@ -61,11 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { metal: 'Cu', ion: '2Ag⁺', isReact: true, eCount: 2, prod1: 'Cu²⁺', prod2: '+ 2Ag' },
         { metal: 'Zn', ion: '2Ag⁺', isReact: true, eCount: 2, prod1: 'Zn²⁺', prod2: '+ 2Ag' },
         { metal: 'Fe', ion: '2Ag⁺', isReact: true, eCount: 2, prod1: 'Fe²⁺', prod2: '+ 2Ag' },
-        // ★ 3가 철 이온(Fe³⁺) 반응 추가 (Fe³⁺ -> Fe²⁺ 환원)
-        { metal: 'Cu', ion: '2Fe³⁺', isReact: true, eCount: 2, prod1: 'Cu²⁺', prod2: '+ 2Fe²⁺' },
-        { metal: 'Zn', ion: '2Fe³⁺', isReact: true, eCount: 2, prod1: 'Zn²⁺', prod2: '+ 2Fe²⁺' },
-        { metal: 'Mg', ion: '2Fe³⁺', isReact: true, eCount: 2, prod1: 'Mg²⁺', prod2: '+ 2Fe²⁺' },
-        { metal: 'Ni', ion: '2Fe³⁺', isReact: true, eCount: 2, prod1: 'Ni²⁺', prod2: '+ 2Fe²⁺' },
         // 3개 전자 이동
         { metal: 'Al', ion: '3Ag⁺', isReact: true, eCount: 3, prod1: 'Al³⁺', prod2: '+ 3Ag' },
         // 6개 전자 이동
