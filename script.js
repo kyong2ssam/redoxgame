@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ★ 여기에 구글 앱스 스크립트 웹 앱 URL을 붙여넣으세요 ★
     const sheetUrl = 'https://script.google.com/macros/s/AKfycbwt9yZmDbP-4jWD5skO85LLZcv8gGLsdsgf-XaCXq5SYUzuCGTfeK_QVatgHIEgTycVeQ/exec'; 
 
-    // 📚 거대 문제 은행 (43문제 - 중복 절대 없음)
+    // 📚 거대 문제 은행 (39문제 - 중복 절대 없음)
     const problemsPool = [
         // 1개 전자 이동 (나트륨, 칼륨 등 1족 금속)
         { metal: 'Na', ion: 'Ag⁺', isReact: true, eCount: 1, prod1: 'Na⁺', prod2: '+ Ag' },
