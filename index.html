@@ -13,7 +13,7 @@
         <!-- 화면 1: 인트로 -->
         <div id="screen-intro" class="screen active">
             <h1 class="neon-text">ELECTRON<br>DELIVERY</h1>
-            <p class="subtitle">반응성을 비교해 전자를 배달하세요!</p>
+            <p class="subtitle">이온화 경향성을 비교하고 계수를 맞추세요!</p>
             
             <form id="info-form">
                 <div class="input-group"><input type="number" id="grade" placeholder="학년" required></div>
@@ -31,7 +31,6 @@
                 <div class="score">SCORE <span id="score-display" class="neon-sub">0</span></div>
             </div>
             
-            <!-- 플레이 필드 (양쪽 모두 드래그 & 드롭 가능하게 변경) -->
             <div class="play-field">
                 <div class="material" id="mat-left">
                     <h3>물질 A</h3>
@@ -46,14 +45,30 @@
                 </div>
             </div>
 
-            <!-- 피드백 메시지 (틀렸을 때) -->
-            <p id="feedback-msg" style="text-align:center; height:20px; color:#f0f; font-weight:bold; margin-top:5px;"></p>
+            <!-- ★ 반응 없음 버튼 추가 ★ -->
+            <button id="btn-no-reaction" class="neon-btn small" style="margin: 10px auto; display: block; border-color: #ffaa00; color: #ffaa00;">반응 일어나지 않음 (No Reaction)</button>
+
+            <p id="feedback-msg" style="text-align:center; height:20px; font-weight:bold; margin-top:5px;"></p>
 
             <div class="reaction-formula">
-                <p><span id="reactants-text">[ ? ] + [ ? ]</span> → <br><span class="blank">[ ? ]</span> + <span class="blank">[ ? ]</span></p>
+                <p><span id="reactants-text">[ ? ] + [ ? ]</span> → <br><span class="blank">[ ? ]</span> <span class="blank"></span></p>
             </div>
             
-            <button id="temp-end-btn" class="neon-btn small">강제 종료 (테스트용)</button>
+            <button id="temp-end-btn" class="neon-btn small" style="margin-top: 15px;">강제 종료 (테스트용)</button>
+
+            <!-- ★ 전자 개수 선택 모달 팝업 ★ -->
+            <div id="electron-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h3>전자가 몇 개 이동할까요?</h3>
+                    <div class="e-btn-group">
+                        <button class="e-btn" data-val="1">1 개</button>
+                        <button class="e-btn" data-val="2">2 개</button>
+                        <button class="e-btn" data-val="3">3 개</button>
+                        <button class="e-btn" data-val="6">6 개</button>
+                    </div>
+                    <button id="btn-modal-close" class="neon-btn small" style="margin-top:20px; border-color:red; color:red;">취소 (다시 생각하기)</button>
+                </div>
+            </div>
         </div>
 
         <!-- 화면 3: 결과 -->
