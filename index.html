@@ -16,10 +16,26 @@
             <p class="subtitle">이온화 경향성을 비교하고 계수를 맞추세요!</p>
             
             <form id="info-form">
-                <div class="input-group"><input type="number" id="grade" placeholder="학년" required></div>
-                <div class="input-group"><input type="number" id="classNum" placeholder="반" required></div>
-                <div class="input-group"><input type="number" id="studentNum" placeholder="번호" required></div>
-                <div class="input-group"><input type="text" id="name" placeholder="이름" required></div>
+                <!-- 학년, 반, 번호를 한 줄로 배치 -->
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="grade">학년</label>
+                        <input type="number" id="grade" min="1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="classNum">반</label>
+                        <input type="number" id="classNum" min="1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="studentNum">번호</label>
+                        <input type="number" id="studentNum" min="1" required>
+                    </div>
+                </div>
+                <!-- 이름 입력창은 아래에 넓게 배치 -->
+                <div class="input-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" placeholder="이름을 입력하세요" required>
+                </div>
                 <button type="submit" class="neon-btn">GAME START</button>
             </form>
         </div>
