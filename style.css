@@ -293,3 +293,26 @@ body {
     background: #0ff;
     color: #000;
 }
+
+/* HUD (타이머, 진행도, 목숨, 점수) 최적화 */
+.hud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(0, 255, 255, 0.1);
+    border-bottom: 1px solid #0ff;
+    font-family: 'Orbitron', 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    gap: 5px;
+}
+
+.hud > div {
+    width: 48%; /* 2줄로 예쁘게 배치 */
+    margin-bottom: 5px;
+}
+
+.score { text-align: right; }
+.hearts { text-align: right; letter-spacing: 2px;}

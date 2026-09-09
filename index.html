@@ -27,7 +27,9 @@
         <!-- 화면 2: 메인 게임 -->
         <div id="screen-game" class="screen">
             <div class="hud">
-                <div class="timer">TIME <span id="time-display" class="neon-sub">10:00</span></div>
+                <div class="timer">TIME <span id="time-display" class="neon-sub">05:00</span></div>
+                <div class="progress">문제 <span id="problem-count-display" class="neon-sub">1</span>/30</div>
+                <div class="hearts">LIFE <span id="heart-display" class="neon-sub">❤️❤️❤️</span></div>
                 <div class="score">SCORE <span id="score-display" class="neon-sub">0</span></div>
             </div>
             
@@ -45,18 +47,17 @@
                 </div>
             </div>
 
-            <!-- ★ 반응 없음 버튼 추가 ★ -->
             <button id="btn-no-reaction" class="neon-btn small" style="margin: 10px auto; display: block; border-color: #ffaa00; color: #ffaa00;">반응 일어나지 않음 (No Reaction)</button>
 
-            <p id="feedback-msg" style="text-align:center; height:20px; font-weight:bold; margin-top:5px;"></p>
+            <p id="feedback-msg" style="text-align:center; height:20px; font-weight:bold; margin-top:5px; font-size:0.95rem;"></p>
 
             <div class="reaction-formula">
                 <p><span id="reactants-text">[ ? ] + [ ? ]</span> → <br><span class="blank">[ ? ]</span> <span class="blank"></span></p>
             </div>
             
-            <button id="temp-end-btn" class="neon-btn small" style="margin-top: 15px;">강제 종료 (테스트용)</button>
+            <button id="temp-end-btn" class="neon-btn small" style="margin-top: 15px;">강제 종료</button>
 
-            <!-- ★ 전자 개수 선택 모달 팝업 ★ -->
+            <!-- 전자 개수 선택 모달 팝업 -->
             <div id="electron-modal" class="modal hidden">
                 <div class="modal-content">
                     <h3>전자가 몇 개 이동할까요?</h3>
@@ -73,7 +74,7 @@
 
         <!-- 화면 3: 결과 -->
         <div id="screen-result" class="screen">
-            <h1 class="neon-text">GAME OVER</h1>
+            <h1 class="neon-text" id="result-title">GAME OVER</h1>
             <div class="result-info">
                 <p id="result-player">플레이어: -</p>
                 <p class="final-score">최종 점수: <br><span id="final-score-display">0</span> Pt</p>
